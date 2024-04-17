@@ -22,12 +22,14 @@ $ nest new project-name
 
 The project-name directory will ne created, node modules and few other boilerplate files will be installed and a src/ directory will ne created and populated with serveral core files.
 
+```js
 src
 |--- app.controller.spec.ts
 |--- app.controller.ts
 |--- app.module.ts
 |--- app.service.ts
 |--- main.ts
+```
 
 `app.controller.ts`
 
