@@ -86,6 +86,103 @@ $ npm run lint
 $ npm run format
 ```
 
+## Controller
+
+Responsible for handling incoming requests and returing responses to the client.
+
+Each controller have more that one route
+
+`Routing mehchanism controls which controller recieves which requests`
+
+### Creating CRUD controller
+
+```js
+$ nest g resource [name]
+```
+
+### @Controller() decorator
+
+- Required to define basic controller.
+- Allows to group set of related routes
+
+### Creating Controller
+
+```js
+$ nest g controller [name]
+```
+
+### Dedicated Decorators
+
+1. @Request(), @Req()
+2. @Response(), @Res()
+3. @Next()
+4. @Session()
+5. @Param()
+6. @Query()
+7. @Body()
+8. @Headers()
+9. @Ip()
+10. @HostParam()
+11. @HttpCode()
+
+### Decoraters for Standard HTTP methods
+
+1. @Get()
+2. @Post()
+3. @Put()
+4. @Delete()
+5. @Patch()
+6. @Options()
+7. @Head()
+
+### Route WildCard
+
+Pattern based routes are supported as well.
+A wildcard in the middle is supported by only express
+
+```js
+@Get('start*end')
+findAll() {
+  return 'This route uses a wildcard';
+}
+```
+
+### Status Code
+
+By default status code is always 200, except POST request it has 201.
+
+We can add status code by decorator `@HttpCode()`
+
+HttpCode present in the `@nestjs/common` package
+
+### Headers
+
+For custom response header we can use @Header() decorator
+
+```js
+@Post()
+@Header('Cache-Control', 'none')
+create() {
+  return 'This action adds a new cat';
+}
+```
+
+## Provider
+
+## Modules
+
+## Middleware
+
+## Exception filter
+
+## Pipes
+
+## Guards
+
+## Interceptors
+
+## Custom Decorators
+
 ## Installation
 
 ```bash
