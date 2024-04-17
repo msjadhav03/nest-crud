@@ -171,6 +171,55 @@ create() {
 }
 ```
 
+### Redirection
+
+To redirect a response to specific URL.
+@Redirect takes two argument url and statusCode
+By deafult Status code is 302
+
+```js
+@Get('docs')
+@Redirect('https://docs.nestjs.com', 302)
+getDocs(@Query('version') version) {
+  if (version && version === '5') {
+    return { url: 'https://docs.nestjs.com/v5/' };
+  }
+}
+
+```
+
+### Route parameters
+
+Accept Dynamic Data
+This can be accessed using @Param() decorator
+
+```js
+@Get('docs')
+@Redirect('https://docs.nestjs.com', 302)
+getDocs(@Query('version') version) {
+  if (version && version === '5') {
+    return { url: 'https://docs.nestjs.com/v5/' };
+  }
+}
+
+```
+
+### Sub-Domain Routing
+
+### Scopes
+
+### Asynchronicity
+
+### Request payloads
+
+### Handling errors
+
+### Full resource sample
+
+### Getting up and running
+
+### Library-specific approach
+
 ## Provider
 
 ## Modules
