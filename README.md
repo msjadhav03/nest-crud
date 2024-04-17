@@ -113,6 +113,7 @@ $ nest g controller [name]
 
 ### Dedicated Decorators
 
+```js
 1. @Request(), @Req()
 2. @Response(), @Res()
 3. @Next()
@@ -124,9 +125,11 @@ $ nest g controller [name]
 9. @Ip()
 10. @HostParam()
 11. @HttpCode()
+```
 
 ### Decoraters for Standard HTTP methods
 
+```js
 1. @Get()
 2. @Post()
 3. @Put()
@@ -134,6 +137,7 @@ $ nest g controller [name]
 5. @Patch()
 6. @Options()
 7. @Head()
+```
 
 ### Route WildCard
 
