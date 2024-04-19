@@ -194,17 +194,40 @@ Accept Dynamic Data
 This can be accessed using @Param() decorator
 
 ```js
-@Get('docs')
-@Redirect('https://docs.nestjs.com', 302)
-getDocs(@Query('version') version) {
-  if (version && version === '5') {
-    return { url: 'https://docs.nestjs.com/v5/' };
-  }
+@Get(':id')
+findOne(@Param('id') id: string): string {
+  return `This action returns a #${id} cat`;
 }
-
 ```
 
+another example
+
+```js
+@Get(':id')
+@Bind(Param())
+findOne(params) {
+  console.log(params.id);
+  return `This action returns a #${params.id} cat`;
+}
+```
+
+`Import Param from the @nestjs/common package`
+
 ### Sub-Domain Routing
+
+`The @Controller decorator can take a host option to require that the HTTP host of the incoming requests matches some specific value`
+
+```js
+@Controller({host : 'admin.example.com'})
+export class AdminController {
+  @Get()
+  index() : string {
+    return 'Admin page';
+  }
+}
+```
+
+`for sub-domain routing the express adapter should be used.`
 
 ### Scopes
 
